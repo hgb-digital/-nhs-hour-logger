@@ -1,0 +1,18 @@
+{
+    "empty_input" : "Please fill in all fields!",
+    "login_incorrect": "Incorrect login info!",
+    "password_verification_failed": "Incorrect password!",
+    "internal_server": "Internal Server Error",
+    "character_error": "Only letters and numbers are allowed!",
+    "not_authorized": "Request not authorized!",
+    "unauthorized_user": "User not authorized",
+    "maintenance": "The server is under maintenance",
+    "email_request_valid": "There is already a valid email request",
+    "email_not_verified": "User email is not verified",
+    "email_not_found": "This email has not been added to the system, contact an administrator if you think this is a mistake",
+    "account_verified": "Account already verified, contact an administrator if you need help logging in",
+    "no_committee": "This account has no committee association, please contact an administrator",
+    "password_mismatch": "Passwords do not match",
+    "account_not_verified": "Account not verified, signup to create your account",
+    "request_valid": "A verification email has already been sent to this address, please check your email and click the link to finish setting up your account"
+}

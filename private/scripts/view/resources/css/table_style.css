@@ -1,0 +1,21 @@
+table {
+    border:1px solid rgb(255, 255, 255);
+    border-radius: 12px;
+}
+
+th {
+    color: yellow;
+}
+
+
+
+td {
+    padding: .25em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+}
+
+form {
+    margin-top: 1em;
+}

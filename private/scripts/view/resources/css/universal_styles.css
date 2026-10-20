@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: url(/fonts/IBMPlexSerif-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: url(/fonts/IBMPlexSerif-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "IBMPlexSerif";
+    src: url(/fonts/IBMPlexSerif-Italic.ttf) format("truetype");
+    font-weight: 400;
+    font-style: Italic;
+    font-display: swap;
+}
+
+* {
+    font-family: "IBMPlexSerif", serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+button, input, textarea {
+    outline-color: black;
+    background-color: white;
+    margin: 0.25em;
+    border-radius: .5em;
+    padding: .5em;
+}
+
+button:hover {
+    background-color: yellow;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;      /* Make body fill full screen */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+footer {
+    margin-top: auto;       /* Push footer to bottom */
+    background-color: #070b15;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+body > :not(header):not(footer) {
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.form-error {
+    color: red;
+}
+
+.form-success {
+    color: green;
+}
+
+.pixel-image {
+    image-rendering: pixelated;
+}
+
+a {
+    color: yellow;
+}
