@@ -31,10 +31,11 @@ Database Queries: The dbh_manager.php file (in /private) handled all database qu
 
 handle_POST: There are a variety of forms that need to submit data through POST requests, however these scripts are hidden in the private folder and therefore HTML cannot access them in the <form> action parameter. Therefore, I created the handle_POST.php file in the htdocs (public) directory for handling POST requests. Any form attempting to make a post request (like logging in) will send data to this file and this it will then evaluate whether or not the user has sufficient permissions to make the request (actions such as logging hours require the user to be logged in). Because there are ways to submit POST request without being on the actual webpage, this file acts as a barrier for users attempting to access functions they are not authorized to access. 
 
-serve_resources: Similarly to POST requests, sometimes a file needs to reference a CSS file, image, or 
+serve_resources: Similarly to POST requests, sometimes a file needs to reference CSS files, images, or Javascript files that are not available in the public htdocs directory. The file simply allows HTML to use resources found in the private folder (specifically /private/view/resources). 
 
+*Phase 2*: I now needed to alter the previous architecture to fit the needs of the NHS. In general, this including altering the user permissions enumerable in the database, creating hour log/signup sheet tables in the database, and rebranding the colors/text to fit NHS.
 
-
+*Phase 3*: This is when new development started. I first began with the hour logging system. In NHS, we have both individual and group hours (outlined above) so I needed a system that could allow users to log both. When users access the Log Hours pages, the first thing displayed is the number of ISP vs. GSP hours they have logged. The second section is where they can log hours. Here, there is a toggle of whether they'd like to log group or individual hours. For individual hours 
 
 
 
