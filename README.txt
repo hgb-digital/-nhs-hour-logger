@@ -16,7 +16,27 @@ The MySQL configuration export for the NHS database is also included in this rep
 Users can login, log hours, signup for service opportunities, and see hour statistics per committee. At my high school we have 4 committees within NHS (everyone is a member of one) that each focus on differing avenues of service. Officers can also create service opportunities (title and description) and add as many roles as needed. Roles can have a title, a time of service, an attire, and a set number of signup slots. When logging hours, users can add either Individual Service Hours (ISPs) or Group Service Hours (GSPs). Individual hours require a supervisor while group service hours require you to have been signed up on the service sheet prior to the date of service. Officers can also remove hours they feel are malicious or incorrectly documented. 
 #--#
 
-#--Process--#
+#--Process/Structure--#
 This project was developed in the span of around 2 weeks and, alongside the other projects, were only uploaded to Github for the MIT Maker Portfolio and therefore have minimal version control. However, below I have outlined the development process so reviewers can specifically see how the project evolved over time. Information regarding development will also be provided in the media upload of the MIT Maker Portfolio.
 
-PHASE 0: 
+*PHASE 0*: In April 2026, before starting the project, I met with my chapter advisor to see if an NHS website would be used and got approval to start development.
+
+*PHASE 1*: For this project, I begun using the same login/signup system along with the basic structure for a website that I used in the Eversole Network project (see other projects). This structure worked as follows:
+
+File Segmentation: Project files are split into 2 folders: htdocs and private. The folder htdocs was the web root and was what web users physically had access to from the internet. However, in order to create a secure environment, I moved the majority of the project's files into a private folder (inaccessable to web users). The index.php in the htdocs folder would then check the URL the user inputted (or was directed to) and ensure the file they were trying to reach was accessible with the permissions they were assigned at login. For this project, I simply checked if the user was logged in before allowing them to access the url they were requesting (assuming the file existed). For each admin or officer specific pages, there was a permission check at the top of the file and redirected the user if they didn't meet the permissions.
+
+File Organization: In the private folder, I split each file into different groups based on function. The pages/all_access folder simply contained all the pages I allowed users to navigate to through the URL (through index.php). The scripts folder contained everything else. The features folder contained PHP $_SESSION config (how login is stored) and a functions script which had miscellaneous functions that could be called by others scripts. The login and signup folders had scripts for user login and signup, respectively. The view folder contained scripts having to do with tables, images, messages, or CSS (see serve_resources section below). The web management folder contained scripts that could be accessed using POST requests (see handle_POST section).
+
+Database Queries: The dbh_manager.php file (in /private) handled all database queries. Using this file, scripts could simply run the run_query() function in order to grab information from the database. An important security feature, this file used statement preparation with variables bound to the statement rather than injected. This prevented SQL injection by checking each user input (username, password, etc.) before attaching it to the SQL query. 
+
+handle_POST: There are a variety of forms that need to submit data through POST requests, however these scripts are hidden in the private folder and therefore HTML cannot access them in the <form> action parameter. Therefore, I created the handle_POST.php file in the htdocs (public) directory for handling POST requests. Any form attempting to make a post request (like logging in) will send data to this file and this it will then evaluate whether or not the user has sufficient permissions to make the request (actions such as logging hours require the user to be logged in). Because there are ways to submit POST request without being on the actual webpage, this file acts as a barrier for users attempting to access functions they are not authorized to access. 
+
+serve_resources: Similarly to POST requests, sometimes a file needs to reference a CSS file, image, or 
+
+
+
+
+
+
+
+
