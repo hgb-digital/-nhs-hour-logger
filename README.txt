@@ -13,4 +13,10 @@ The MySQL configuration export for the NHS database is also included in this rep
 #--#
 
 #--Features--#
-Users can login 
+Users can login, log hours, signup for service opportunities, and see hour statistics per committee. At my high school we have 4 committees within NHS (everyone is a member of one) that each focus on differing avenues of service. Officers can also create service opportunities (title and description) and add as many roles as needed. Roles can have a title, a time of service, an attire, and a set number of signup slots. When logging hours, users can add either Individual Service Hours (ISPs) or Group Service Hours (GSPs). Individual hours require a supervisor while group service hours require you to have been signed up on the service sheet prior to the date of service. Officers can also remove hours they feel are malicious or incorrectly documented. 
+#--#
+
+#--Process--#
+This project was developed in the span of around 2 weeks and, alongside the other projects, were only uploaded to Github for the MIT Maker Portfolio and therefore have minimal version control. However, below I have outlined the development process so reviewers can specifically see how the project evolved over time. Information regarding development will also be provided in the media upload of the MIT Maker Portfolio.
+
+PHASE 0: 
