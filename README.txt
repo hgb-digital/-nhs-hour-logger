@@ -35,7 +35,9 @@ serve_resources: Similarly to POST requests, sometimes a file needs to reference
 
 *Phase 2*: I now needed to alter the previous architecture to fit the needs of the NHS. In general, this including altering the user permissions enumerable in the database, creating hour log/signup sheet tables in the database, and rebranding the colors/text to fit NHS.
 
-*Phase 3*: This is when new development started. I first began with the hour logging system. In NHS, we have both individual and group hours (outlined above) so I needed a system that could allow users to log both. When users access the Log Hours pages, the first thing displayed is the number of ISP vs. GSP hours they have logged. The second section is where they can log hours. Here, there is a toggle of whether they'd like to log group or individual hours. For individual hours 
+*Phase 3*: This is when new development started. I first began with the hour logging system. In NHS, we have both individual and group hours (outlined above) so I needed a system that could allow users to log both. When users access the Log Hours pages, the first thing displayed is the number of ISP vs. GSP hours they have logged. The second section is where they can log hours. Here, there is a toggle of whether they'd like to log group or individual hours. The last 2 sections simply display what hours you've already logged and allows you to remove them. 
+
+*Phase 4*: A key part of NHS is group hour opportunities where NHS members all volunteer together. These opportunities require a signup sheet so the organizers know who to expect and the officers know who to expect to log group hours. I implemented this into my logger. On the Group Service page, members can view upcoming and past volunteer opportunities. Clicking on upcoming signups allows them to add their name to the list as well as remove their name if necessary. Officers can create these signup sheets, assigning different roles and slots as necessary. In order to prevent forgery of hours, users can only log group hours from opportunities in which their name has been added (the website provides a dropdown of what hours you are permitted to log). 
 
 
 
