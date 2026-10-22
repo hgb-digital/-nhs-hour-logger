@@ -104,7 +104,7 @@
     ?>
         <ul class="nav-links">
             <li class="acc-dropdown">
-                <a href="/?url=users&user_id=<?php echo $_SESSION['user_id']; ?>" class="nav-account"><?php echo htmlspecialchars($display, ENT_QUOTES, 'UTF-8'); ?></a>
+                <a href="/?url=members&member=<?php echo $_SESSION['user_id']; ?>" class="nav-account"><?php echo htmlspecialchars($display, ENT_QUOTES, 'UTF-8'); ?></a>
                 <div class="acc-content">
                     <a href="/?url=logout">Logout</a>
                 </div>
