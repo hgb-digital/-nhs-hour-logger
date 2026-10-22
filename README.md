@@ -28,7 +28,7 @@
 <p>In April 2026, before starting the project, I met with my chapter advisor to see if an NHS website would be used and got approval to start development.</p>
 
 <h3>PHASE 1</h3>
-<p>For this project, I began by using the same login/signup system along with the basic structure for a website that I used in the Eversole Network project (see other projects). This structure worked as follows:</p>
+<p>For this project, I began by using the same login/signup system (that includes password hashing) along with the basic structure for a website that I used in the Eversole Network project (see other projects). This structure worked as follows:</p>
 
 <ul>
   <li><strong>File Segmentation:</strong> Project files are split into 2 folders: <code>htdocs</code> and <code>private</code>. The folder <code>htdocs</code> was the web root and was what web users physically had access to from the internet. However, in order to create a secure environment, I moved the majority of the project's files into a private folder (inaccessible to web users). The <code>index.php</code> in the <code>htdocs</code> folder would then check the URL the user inputted (or was directed to) and ensure the file they were trying to reach was accessible with the permissions they were assigned at login. For this project, I simply checked if the user was logged in before allowing them to access the url they were requesting (assuming the file existed). For each admin or officer specific pages, there was a permission check at the top of the file and redirected the user if they didn't meet the permissions.</li>
