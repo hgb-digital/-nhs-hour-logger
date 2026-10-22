@@ -4,13 +4,14 @@ function create_service ($data) {
     if (check_empty([$data['title'], $data['description'], $data['role_count']])) {
         return ['errors' => ['empty_input']];
     }
-
+    
     //check to make sure role count and role data match
     $role_count = intval($data['role_count']);
     for ($i = 1; $i <= $role_count; $i++) {
         if (check_empty([$data["role_{$i}_title"], $data["role_{$i}_desc"], $data["role_{$i}_slots"], $data["role_{$i}_time"], $data["role_{$i}_loc"]])) {
             return ['errors' => ['empty_input']];
         }
+        
         $timestamp = date('Y-m-d H:i:s', strtotime($data["role_{$i}_time"]));
         if ($timestamp < date('Y-m-d H:i:s')) {
             return ['errors' => ['internal_server']];

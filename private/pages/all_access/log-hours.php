@@ -7,13 +7,12 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once realpath($_SERVER['DOCUMENT_ROOT'] . "/../private/scripts/features/functions.php");
 
-$logged_isp = run_query("SELECT id, title, description, duration, supervisor_name, supervisor_contact, timestamp ,SUM(duration) as total_hours FROM hours WHERE user_id = :id AND type = 'isp' GROUP BY title, description, duration, supervisor_name, supervisor_contact, timestamp;", [":id" => $_SESSION['user_id']]);
-$logged_gsp = run_query("SELECT id, duration, timestamp, role_id, SUM(duration) as total_hours FROM hours WHERE user_id = :id AND type = 'gsp' GROUP BY duration, timestamp, role_id;", [":id" => $_SESSION['user_id']]);
+$logged_isp = run_query("SELECT id, title, description, duration, supervisor_name, supervisor_contact, timestamp, SUM(duration) OVER () AS total_hours FROM hours WHERE user_id = :id AND type = 'isp' GROUP BY title, description, duration, supervisor_name, supervisor_contact, timestamp;", [":id" => $_SESSION['user_id']]);
+$logged_gsp = run_query("SELECT id, duration, timestamp, role_id, SUM(duration) OVER () AS total_hours FROM hours WHERE user_id = :id AND type = 'gsp' GROUP BY duration, timestamp, role_id;", [":id" => $_SESSION['user_id']]);
 
 $participated = run_query("SELECT
     ss.id AS sheet_id,
     ss.title,
-    ss.event_date,
     sr.id AS role_id,
     sr.description as role_description
 FROM signups s
@@ -22,7 +21,6 @@ JOIN service_roles sr
 JOIN service_sheet ss
     ON sr.sheet_id = ss.id
 WHERE s.user_id = :id
-  AND ss.event_date < NOW()
   AND NOT EXISTS (
       SELECT 1
       FROM hours h
