@@ -55,7 +55,7 @@ Active development began with the hour logging system to support both individual
 Group hour opportunities require a signup sheet so organizers know who to expect and officers can verify attendance before hours are logged. Members can view upcoming/past volunteer opportunities on the Group Service page and sign up or remove their names. Officers can create these signup sheets with custom roles and slot limits. To prevent forgery, users can only log group hours for opportunities where their name appears on the signup sheet (selected via a pre-populated dropdown).
 
 ### PHASE 5
-In this phase, I implemented features allowing members to view a directory of NHS members and their logged hours. Officers received the ability to delete malicious entries. Using Claude, I implemented an hour chart displaying total hours logged per committee. Finally, an email verification and password reset system using PHPMailer and SMTP2GO was integrated using temporary tokens sent via email links.
+In this phase, I implemented features allowing members to view a directory of NHS members and their logged hours. Officers received the ability to delete malicious entries. Using Claude, I implemented an hour chart displaying total hours logged per committee. Finally, an email verification and password reset system using PHPMailer and SMTP2GO was integrated using temporary tokens sent via email links (see `private/scripts/login/email_verification.php`).
 
 ### PHASE 6
 Development concluded after the functional prototype was complete. Production deployment was halted when the local IT department denied permission to host student data due to FERPA compliance constraints. Attempts to negotiate hosting via an IT-approved provider (AWS) were ultimately unapproved.
