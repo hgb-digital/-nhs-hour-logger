@@ -2,6 +2,9 @@
 <p><strong>Hudson Brackeen</strong><br>
 <em>Uploaded for the MIT Maker Portfolio</em></p>
 
+<p>For reviewers: This is an extensive document that outlines the majority of the systems housed in this project. I understand your time is limited so I would recommend briefly reviewing the phase outline below to understand my developmental process.</p>
+
+
 <hr>
 
 <h2>Description</h2>
